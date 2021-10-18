@@ -250,6 +250,7 @@ def flip_coin():
     flip = random.randint(1,2)
     if flip == 1:
         outcome = 'heads'
+    # could have just used else here instead
     if flip == 2:
         outcome = 'tails'
     return outcome
