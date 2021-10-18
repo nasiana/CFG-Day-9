@@ -282,3 +282,92 @@ choice = input('heads or tails: ')
 result = flip_coin()
 
 print('The coin landed on {}'.format(result))
+
+################################################
+###           PALINDROME EXERCISE            ###
+################################################
+
+"""
+Palindrome Check
+
+Write a function that takes a non-empty string 
+and that returns a boolean representing whether the string is a palindrome.
+
+Think and plan your solution first. 
+If helps, write a pseudo-code.
+"""
+
+def isPalindrome(string):
+
+    # your solution here
+
+
+print(isPalindrome('hannah'))  # should return True
+
+print(isPalindrome('mummy'))  # should return False
+
+print(isPalindrome('I'))  # should return True
+
+'''
+Solution 1 --> this solution is OK, it is correct and works
+'''
+
+def isPalindrome(string):
+    l = len(string)
+    if l == 1:
+        return True
+    return string == string[::-1]
+
+
+
+print(isPalindrome('hannah')) # should return True
+
+print(isPalindrome('mummy')) # should return False
+
+print(isPalindrome('I')) # should return True
+
+"""
+Solution 2 --> this solution is excellent and very efficient!
+"""
+
+def isPalindrome(string):
+    leftIdx = 0
+    rightIdx = len(string) - 1
+    while leftIdx < rightIdx:
+        if string[leftIdx] != string[rightIdx]:
+            return False
+        leftIdx += 1
+        rightIdx -= 1
+    return True
+
+print(isPalindrome('hannah')) # should return True
+
+print(isPalindrome('mummy')) # should return False
+
+print(isPalindrome('I')) # should return True
+
+"""
+DISCUSSION POINT:
+Why do you think the second solution is better that the first one?
+
+SAMPLE ANSWERS:
+
+short answer: 
+    Time and Space complexity O(n) time | O(1) space ---> but we have not learnt about this yet
+
+simply explain that the first solution you need to reverse ALL letters first 
+and then compare two strings, which is time and memory consuming.
+
+second solution is very efficient as it compares one character from the front of the string 
+to the respective character from the end of the string. 
+As soon as it finds a mismatch (let's say on the first letter), then it stops the execution and returs False. 
+There is no point comparing the rest of the letters if we have one mismatch.
+
+"""
+
+# End of session questions
+
+print(True or False)
+print(True or True)
+print(True and False)
+print(True and True)
